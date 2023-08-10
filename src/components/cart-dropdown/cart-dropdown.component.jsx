@@ -12,13 +12,12 @@ const CartDropdown = () => {
   const goToCheckoutHandler = () => {
     navigate("/checkout");
   };
-
   return (
     <CartDropdownContainer>
       <CartItems>
         {
           cartItems.length ? (
-            cartItems.map(item => <CartItem cartItem={item} />)
+            cartItems.map(item => <CartItem cartItem={item} key={item.name} />)
           ) : (<EmptyMessage>Your cart is empty</EmptyMessage>)
         }
       </CartItems>
